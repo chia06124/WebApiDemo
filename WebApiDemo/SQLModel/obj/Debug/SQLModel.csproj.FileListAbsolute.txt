@@ -1,0 +1,15 @@
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\SQLModel.dll.config
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\SQLModel.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\SQLModel.pdb
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\Dapper.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\EntityFramework.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\Newtonsoft.Json.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\Dapper.xml
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\EntityFramework.xml
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\Newtonsoft.Json.xml
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\zh-Hant\EntityFramework.resources.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\obj\Debug\SQLModel.dll
+c:\users\lily.tu\documents\visual studio 2015\Projects\WebApiDemo\SQLModel\obj\Debug\SQLModel.pdb
