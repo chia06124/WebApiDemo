@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Transactions;
 using System.Web.Http;
+using SQLModel.Models;
 
 namespace WebApiDemo.Controllers
 {
@@ -32,10 +33,19 @@ namespace WebApiDemo.Controllers
                     conn.Open();
                     if (data != null)
                     {
-                        SMSDataRepository sms = new SMSDataRepository(conn);
-                        sms.Create(data);
-                        FUTDataRepository fut = new FUTDataRepository(conn);
-                        fut.Create(data);
+
+
+                        OO_SMSData OOSMSData = data.ToObject<OO_SMSData>();
+                        OOSMSData.CreateUser = "Lily";
+                        OOSMSData.CreateDate = Convert.ToDateTime(DateTime.Now);
+                        SMSDataRepository<OO_SMSData> SMSData = new SMSDataRepository<OO_SMSData>(conn);
+                        SMSData.Create(OOSMSData);
+
+                        OO_FUTData OOFUTData = data.ToObject<OO_FUTData>();
+                        OOFUTData.CreateUser = "Lily";
+                        OOFUTData.CreateDate = Convert.ToDateTime(DateTime.Now);
+                        FUTDataRepository<OO_FUTData> FUTData = new FUTDataRepository<OO_FUTData>(conn);
+                        FUTData.Create(OOFUTData);
                         //SBKDataRepository sbk = new SBKDataRepository();
                         //sbk.Create(data);
                         //scope.Complete();
