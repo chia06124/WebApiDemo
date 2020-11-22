@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace SQLModel.Interface
 {
-    public interface IRepository
+    public interface IRepository<TEntity>
     {
-        void Create(JObject entity);
+        void Create(TEntity entity);
     }
 }
