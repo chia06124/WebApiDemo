@@ -13,6 +13,7 @@ using SQLModel.Models;
 using WebApiService;
 using SQLModel.Connection;
 using System.Data;
+using WebApiDemo.AuthHelper;
 
 namespace WebApiDemo.Controllers
 {
@@ -23,6 +24,7 @@ namespace WebApiDemo.Controllers
     {
         [Route("SetApplyData")]
         [HttpPost]
+        [JwtAuthActionFilter]
         public HttpResponseMessage SetApplyDataPost([FromBody]JObject data)
         {
 

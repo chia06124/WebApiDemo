@@ -65,6 +65,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Connection\ConnectionFactory.cs" />
     <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Models\JwtAuthObject.cs" />
     <Compile Include="Models\OAtempModel.cs" />
     <Compile Include="Models\OO_FUTData.cs" />
     <Compile Include="Models\OO_SBKData.cs" />
