@@ -31,14 +31,6 @@ namespace WebApiService
         }
     }
 
-        //SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["OAtempModel"].ConnectionString);
-        
-        //public SMSDataService()
-        //{
-            
-        //    //conn.Open();
-        //}
-
         
     
 }
