@@ -144,6 +144,10 @@
       <Project>{C70756CE-F0ED-4365-B1BA-D6E7FB6F989A}</Project>
       <Name>SQLModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebApiService\WebApiService.csproj">
+      <Project>{9fec46a0-f5cd-4f97-ac15-7d3f6ebc5fc6}</Project>
+      <Name>WebApiService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,14 @@
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\WebApiService.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\WebApiService.pdb
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\Newtonsoft.Json.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\SQLModel.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\EntityFramework.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\Dapper.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\SQLModel.pdb
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\Newtonsoft.Json.xml
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\EntityFramework.xml
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\Dapper.xml
+D:\WebApiDemo\WebApiDemo\WebApiService\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\obj\Debug\WebApiService.csprojResolveAssemblyReference.cache
+D:\WebApiDemo\WebApiDemo\WebApiService\obj\Debug\WebApiService.dll
+D:\WebApiDemo\WebApiDemo\WebApiService\obj\Debug\WebApiService.pdb
