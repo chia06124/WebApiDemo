@@ -11,7 +11,7 @@ namespace SQLModel.Connection
 {
     public class ConnectionFactory
     {
-        public IDbConnection CreateConnection(string name = "default")
+        public SqlConnection CreateConnection(string name = "default")
         {
             switch (name)
             {

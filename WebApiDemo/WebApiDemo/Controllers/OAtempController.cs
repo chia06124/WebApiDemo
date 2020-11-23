@@ -11,10 +11,12 @@ using System.Transactions;
 using System.Web.Http;
 using SQLModel.Models;
 using WebApiService;
+using SQLModel.Connection;
+using System.Data;
 
 namespace WebApiDemo.Controllers
 {
-    
+
 
     [RoutePrefix("api/WebApiTemp")]
     public class OAtempController : ApiController
@@ -23,16 +25,15 @@ namespace WebApiDemo.Controllers
         [HttpPost]
         public HttpResponseMessage SetApplyDataPost([FromBody]JObject data)
         {
-           
+
             HttpResponseMessage response = null;
             string message = string.Empty;
             using (TransactionScope scope = new TransactionScope())
             {
-                var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["OAtempModel"].ConnectionString);
-
+                ConnectionFactory Connection = new ConnectionFactory();
+                SqlConnection conn = Connection.CreateConnection();
                 try
                 {
-
                     conn.Open();
                     if (data != null)
                     {
@@ -41,9 +42,8 @@ namespace WebApiDemo.Controllers
 
                         FUTDataService FUTData = new FUTDataService(conn);
                         FUTData.Create(data);
-
                     }
-                    
+
                     scope.Complete();
                     message = "Successfully";
                 }

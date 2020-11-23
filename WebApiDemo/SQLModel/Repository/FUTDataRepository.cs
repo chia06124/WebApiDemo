@@ -15,7 +15,7 @@ namespace SQLModel.Repository
 {
     public class FUTDataRepository<TEntity> : IRepository<TEntity>
     {
-        IDbConnection conn;
+        SqlConnection conn;
         public FUTDataRepository(SqlConnection connnection)
         {
             this.conn = connnection;
@@ -23,32 +23,10 @@ namespace SQLModel.Repository
 
         public void Create(TEntity entity)
         {
-            //var transaction = conn.BeginTransaction();
-            
             string sqlStatement = @"insert into OO_FUTData (FormID,FormNo,ETradingFlag,SettlementWay,MarginCallTrading,MarketPrice,MarginEWay,SignDocVer,CreateUser,CreateDate) "
                 + " values (@FormID,@FormNo,@ETradingFlag,@SettlementWay,@MarginCallTrading,@MarketPrice,@MarginEWay,@SignDocVer,@CreateUser,@CreateDate)";
-            //conn.Execute(sqlStatement, entity, transaction);
-
             conn.Execute(sqlStatement, entity);
-
         }
 
-        //public void Dispose()
-        //{
-        //    this.Dispose(true);
-        //    GC.SuppressFinalize(this);
-        //}
-
-        //protected virtual void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        if (conn != null)
-        //        {
-        //            conn.Dispose();
-        //            conn = null;
-        //        }
-        //    }
-        //}
     }
 }
