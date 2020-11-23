@@ -107,18 +107,6 @@ namespace WebApiDemo.Controllers
                         FUTDataService FUTData = new FUTDataService(conn);
                         FUTData.Create(data);
 
-                        //OO_SMSData OOSMSData = data.ToObject<OO_SMSData>();
-                        //OOSMSData.CreateUser = "Lily";
-                        //OOSMSData.CreateDate = Convert.ToDateTime(DateTime.Now);
-                        //SMSDataRepository<OO_SMSData> SMSData = new SMSDataRepository<OO_SMSData>(conn);
-                        //SMSData.Create(OOSMSData);
-
-                        //OO_FUTData OOFUTData = data.ToObject<OO_FUTData>();
-                        //OOFUTData.CreateUser = "Lily";
-                        //OOFUTData.CreateDate = Convert.ToDateTime(DateTime.Now);
-                        //FUTDataRepository<OO_FUTData> FUTData = new FUTDataRepository<OO_FUTData>(conn);
-                        //FUTData.Create(OOFUTData);
-
                     }
                     
                     scope.Complete();
