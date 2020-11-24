@@ -14,6 +14,7 @@ using WebApiService;
 using SQLModel.Connection;
 using System.Data;
 using WebApiDemo.AuthHelper;
+using WebApiDemo.ActionFilter1;
 
 namespace WebApiDemo.Controllers
 {
@@ -24,7 +25,8 @@ namespace WebApiDemo.Controllers
     {
         [Route("SetApplyData")]
         [HttpPost]
-        [JwtAuthActionFilter]
+       // [JwtAuthActionFilter]
+        [IsAuthenticatedFilter]
         public HttpResponseMessage SetApplyDataPost([FromBody]JObject data)
         {
 

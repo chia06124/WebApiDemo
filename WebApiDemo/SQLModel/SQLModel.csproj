@@ -70,6 +70,9 @@
     <Compile Include="Models\OO_FUTData.cs" />
     <Compile Include="Models\OO_SBKData.cs" />
     <Compile Include="Models\OO_SMSData.cs" />
+    <Compile Include="Models\Payload.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\FUTDataRepository.cs" />
     <Compile Include="Repository\SMSDataRepository.cs" />

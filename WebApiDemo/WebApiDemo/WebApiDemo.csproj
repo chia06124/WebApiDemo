@@ -120,6 +120,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilter1\IsAuthenticatedFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ActionFilter1\JwtAuthActionFilter.cs" />
     <Compile Include="Controllers\OAtempController.cs" />
@@ -127,6 +128,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TokenCrypto.cs" />
+    <Compile Include="Models\TokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SQLModel\SQLModel.csproj">
