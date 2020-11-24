@@ -1,4 +1,5 @@
 ﻿using Jose;
+using Newtonsoft.Json.Linq;
 using SQLModel.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace WebApiDemo.AuthHelper
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
             var secret = "Hello";
-            if (actionContext.Request.Headers.Authorization==null )
+            if (actionContext.Request.Content == null )
             {
                 setErrorResponse(actionContext, "驗證錯誤");
             }
@@ -25,7 +26,10 @@ namespace WebApiDemo.AuthHelper
             {
                 try
                 {
-                    var jwtObject = JWT.Decode<JwtAuthObject>(actionContext.Request.Headers.Authorization.Scheme, Encoding.UTF8.GetBytes(secret),JwsAlgorithm.HS256);
+                    var temp = actionContext.ActionArguments["data"].ToString();
+                    IList<JToken> obj = JObject.Parse(temp);
+                    var Authorization = (((JProperty)obj[0]).Value).ToString();
+                    var jwtObject = JWT.Decode<JwtAuthObject>(Authorization, Encoding.UTF8.GetBytes(secret),JwsAlgorithm.HS256);
                 }
                 catch (Exception ex)
                 {
