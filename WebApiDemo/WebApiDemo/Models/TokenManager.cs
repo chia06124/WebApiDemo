@@ -2,6 +2,8 @@
 using SQLModel.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -10,12 +12,20 @@ namespace WebApiDemo.Models
 {
     public class TokenManager
     {
+        NameValueCollection myKey = ConfigurationManager.AppSettings;
+        private string key;
+        public TokenManager()
+        {
+            key = myKey["TokenKey"];
+        }
+
         //金鑰，從設定檔或資料庫取得
-        public string key = "AAAAAAAAAA-BBBBBBBBBB-CCCCCCCCCC-DDDDDDDDDD-EEEEEEEEEE-FFFFFFFFFF-GGGGGGGGGG";
+        //public string key = "AAAAAAAAAA-BBBBBBBBBB-CCCCCCCCCC-DDDDDDDDDD-EEEEEEEEEE-FFFFFFFFFF-GGGGGGGGGG";
         //產生 Token
         public Token Create(User user)
         {
-            var exp = 20;   //過期時間(秒)
+
+            var exp = 30;   //過期時間(秒)
 
             //稍微修改 Payload 將使用者資訊和過期時間分開
             var payload = new Payload
