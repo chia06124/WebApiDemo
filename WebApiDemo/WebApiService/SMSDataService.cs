@@ -2,6 +2,7 @@
 using SQLModel.Models;
 using SQLModel.Repository;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -30,6 +31,12 @@ namespace WebApiService
             OOSMSData.CreateDate = Convert.ToDateTime(DateTime.Now);
             SMSDataRepository.Create(OOSMSData);
         }
+
+        public IEnumerable<OO_SMSData> Get(JObject data)
+        {
+            return SMSDataRepository.Get(data);
+        }
+
     }
 
         

@@ -25,7 +25,7 @@ namespace WebApiDemo.Models
         public Token Create(User user)
         {
 
-            var exp = 30;   //過期時間(秒)
+            var exp = 180;   //過期時間(秒)
 
             //稍微修改 Payload 將使用者資訊和過期時間分開
             var payload = new Payload

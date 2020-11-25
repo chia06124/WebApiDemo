@@ -27,6 +27,11 @@ namespace SQLModel.Repository
                 + " values (@FormID,@FormNo,@ETradingFlag,@SettlementWay,@MarginCallTrading,@MarketPrice,@MarginEWay,@SignDocVer,@CreateUser,@CreateDate)";
             conn.Execute(sqlStatement, entity);
         }
+        public IEnumerable<TEntity> Get(JObject data)
+        {
+            string sqlStatement = @"select * from OO_FUTData where FormID=@FromID and FormNo=@FormNo";
+            return conn.Query<TEntity>(sqlStatement, data);
+        }
 
     }
 }
