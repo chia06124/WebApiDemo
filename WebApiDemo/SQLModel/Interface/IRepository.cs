@@ -13,5 +13,7 @@ namespace SQLModel.Interface
     {
         void Create(TEntity entity);
         string Get(JObject data);
+
+        void Update(TEntity data);
     }
 }

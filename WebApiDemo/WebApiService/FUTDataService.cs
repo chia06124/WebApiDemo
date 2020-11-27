@@ -28,5 +28,13 @@ namespace WebApiService
             OOFUTData.CreateDate = Convert.ToDateTime(DateTime.Now);
             FUTDataRepository.Create(OOFUTData);
         }
+
+        public void Update(JObject data)
+        {
+            OO_FUTData OOFUTData = data.ToObject<OO_FUTData>();
+            OOFUTData.CreateUser = "Lily";
+            OOFUTData.CreateDate = Convert.ToDateTime(DateTime.Now);
+            FUTDataRepository.Update(OOFUTData);
+        }
     }
 }

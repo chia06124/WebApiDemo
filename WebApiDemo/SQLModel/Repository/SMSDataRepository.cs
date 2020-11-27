@@ -42,6 +42,13 @@ namespace SQLModel.Repository
             return JsonConvert.SerializeObject(tables);
         }
 
+        public void Update(TEntity data)
+        {
+            string sqlStatement = @"update OO_SMSData "
+                                + " set SettlementWay=@SettlementWay,ETradingFlag=@ETradingFlag,TDCCBookFlag=@TDCCBookFlag,@SignDocVer=SignDocVer,CreateUser=@CreateUser,CreateDate=@CreateDate "
+                                + " where FormID=@FormID and FormNo=@FormNo ";
+            conn.Execute(sqlStatement, data);
+        }
 
     }
 }
