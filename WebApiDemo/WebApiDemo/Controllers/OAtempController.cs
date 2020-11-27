@@ -17,6 +17,7 @@ using WebApiDemo.AuthHelper;
 using WebApiDemo.ActionFilter1;
 using Newtonsoft.JsonResult;
 using System.Web.Script.Serialization;
+using Newtonsoft.Json;
 
 namespace WebApiDemo.Controllers
 {
@@ -69,52 +70,39 @@ namespace WebApiDemo.Controllers
         [HttpPost]
         // [JwtAuthActionFilter]
         [IsAuthenticatedFilter]
-        //public IEnumerable<OO_SMSData> GetApplyData([FromBody]JObject data)
-            public string GetApplyData([FromBody]JObject data)
-        {
 
-            HttpResponseMessage response = null;
+        public List<OO_SMSData> GetApplyData([FromBody]JObject data)
+        //public string GetApplyData([FromBody]JObject data)
+        {
             string message = string.Empty;
-            string json="";
             using (TransactionScope scope = new TransactionScope())
             {
                 ConnectionFactory Connection = new ConnectionFactory();
                 SqlConnection conn = Connection.CreateConnection();
-                SMSDataService SMSData=null;
-                
+                SMSDataService SMSData = null;
                 try
                 {
                     conn.Open();
                     if (data != null)
                     {
+
                         //SMSData = new SMSDataService(conn);
-                        //SMSData.Get(data);
-
-
-                        // some code //
                         SMSData = new SMSDataService(conn);
-                        var products = SMSData.Get(data);
-                        json = new JavaScriptSerializer().Serialize(products);
-                        // some code //
                         
-                    }
 
-                    //scope.Complete();
-                    //message = "Successfully";
+                    }
                 }
                 catch (Exception e)
                 {
-
                     message = e.Message;
-                    return message.ToString();
+                    string rowString = SMSData.ToString();
                 }
-                //response = Request.CreateResponse<string>(HttpStatusCode.OK, message);
                 //return SMSData.Get(data);
-                return json;
+                return JsonConvert.DeserializeObject<List<OO_SMSData>>(SMSData.Get(data));
             }
 
         }
-        
-        }
+
     }
+}
 

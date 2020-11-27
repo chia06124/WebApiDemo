@@ -31,9 +31,6 @@ namespace WebApiDemo.ActionFilter1
                 try
                 {
                     var authoriaztion = HttpContext.Current.Request.Headers["Authoriaztion"];
-                    //var temp = actionContext.ActionArguments["data"].ToString();
-                    //IList<JToken> obj = JObject.Parse(authoriaztion);
-                    //var Authorization = (((JProperty)obj[0]).Value).ToString();
                     var user = _tokenManager.GetUser(authoriaztion);
                     if (user == null)
                     {

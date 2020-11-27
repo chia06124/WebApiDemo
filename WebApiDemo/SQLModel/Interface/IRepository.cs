@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.JsonResult;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,6 @@ namespace SQLModel.Interface
     public interface IRepository<TEntity>
     {
         void Create(TEntity entity);
-        IEnumerable<TEntity> Get(JObject data);
+        string Get(JObject data);
     }
 }

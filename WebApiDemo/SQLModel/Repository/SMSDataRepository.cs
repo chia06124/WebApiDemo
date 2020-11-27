@@ -11,6 +11,7 @@ using Dapper;
 using Newtonsoft.Json.Linq;
 using System.Data.Entity;
 using System.Collections;
+using Newtonsoft.Json;
 
 namespace SQLModel.Repository
 {
@@ -29,19 +30,16 @@ namespace SQLModel.Repository
             conn.Execute(sqlStatement, entity);
         }
 
-        public IEnumerable<TEntity> Get(JObject data)
+        public string Get(JObject data)
         {
-            //string sqlStatement = @"select * from OO_SMSData where FormID=@FromID and FormNo=@FormNo";
-            //return conn.Query<TEntity>(sqlStatement, data).ToList();
-
             OO_SMSData OOSMSData = data.ToObject<OO_SMSData>();
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@FormID", data["FormID"].ToString());
             parameters.Add("@FormNo", data["FormNo"].ToString());
             System.Diagnostics.Debug.Write(data["FormID"].ToString());
             string sqlStatement = @"select * from OO_SMSData where FormID=@FormID and FormNo=@FormNo";
-
-            return conn.Query<TEntity>(sqlStatement, parameters).ToList();
+            var tables = conn.Query<TEntity>(sqlStatement, parameters).ToList();
+            return JsonConvert.SerializeObject(tables);
         }
 
 

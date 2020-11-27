@@ -10,6 +10,8 @@ using SQLModel.Models;
 using Dapper;
 using Newtonsoft.Json.Linq;
 using System.Data.Entity;
+using Newtonsoft.Json;
+using Newtonsoft.JsonResult;
 
 namespace SQLModel.Repository
 {
@@ -27,10 +29,16 @@ namespace SQLModel.Repository
                 + " values (@FormID,@FormNo,@ETradingFlag,@SettlementWay,@MarginCallTrading,@MarketPrice,@MarginEWay,@SignDocVer,@CreateUser,@CreateDate)";
             conn.Execute(sqlStatement, entity);
         }
-        public IEnumerable<TEntity> Get(JObject data)
+        public string Get(JObject data)
         {
             string sqlStatement = @"select * from OO_FUTData where FormID=@FromID and FormNo=@FormNo";
-            return conn.Query<TEntity>(sqlStatement, data);
+            //return conn.Query<TEntity>(sqlStatement, data);
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@FormID", data["FormID"].ToString());
+            parameters.Add("@FormNo", data["FormNo"].ToString());
+
+            var tables = conn.Query<TEntity>(sqlStatement, parameters).ToList();
+            return JsonConvert.SerializeObject(tables);
         }
 
     }

@@ -32,7 +32,7 @@ namespace WebApiService
             SMSDataRepository.Create(OOSMSData);
         }
 
-        public IEnumerable<OO_SMSData> Get(JObject data)
+        public string Get(JObject data)
         {
             return SMSDataRepository.Get(data);
         }
