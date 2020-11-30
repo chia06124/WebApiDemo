@@ -49,6 +49,11 @@ namespace SQLModel.Repository
                                 + " where FormID=@FormID and FormNo=@FormNo ";
             conn.Execute(sqlStatement, data);
         }
-
+        public void Delete(JObject data)
+        {
+            string sqlStatement = @"delete from OO_SMSData "
+                + " where FormID = @FormID and FormNo=@FormNo";
+            conn.Execute(sqlStatement, data);
+        }
     }
 }

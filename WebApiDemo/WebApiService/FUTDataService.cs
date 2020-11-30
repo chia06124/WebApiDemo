@@ -36,5 +36,11 @@ namespace WebApiService
             OOFUTData.CreateDate = Convert.ToDateTime(DateTime.Now);
             FUTDataRepository.Update(OOFUTData);
         }
+
+        public void Delete(JObject data)
+        {
+          
+            FUTDataRepository.Delete(data);
+        }
     }
 }

@@ -50,5 +50,14 @@ namespace SQLModel.Repository
             conn.Execute(sqlStatement, data);
         }
 
+        public void Delete(JObject data)
+        {
+            string sqlStatement = @"delete from OO_FUTData where FormID = @FormID and FormNo=@FormNo";
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@FormID", data["FormID"].ToString());
+            parameters.Add("@FormNo", data["FormNo"].ToString());
+
+            conn.Execute(sqlStatement, parameters);
+        }
     }
 }

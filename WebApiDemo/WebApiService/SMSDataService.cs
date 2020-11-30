@@ -37,6 +37,12 @@ namespace WebApiService
             return SMSDataRepository.Get(data);
         }
 
+        public void Delete(JObject data)
+        {
+
+            SMSDataRepository.Delete(data);
+        }
+
     }
 
         

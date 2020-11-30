@@ -139,6 +139,43 @@ namespace WebApiDemo.Controllers
             }
 
         }
+
+
+        [Route("DeleteApplyData")]
+        [HttpPost]
+        // [JwtAuthActionFilter]
+        [IsAuthenticatedFilter]
+        public HttpResponseMessage DeleteApplyData([FromBody]JObject data)
+        {
+
+            HttpResponseMessage response = null;
+            string message = string.Empty;
+            using (TransactionScope scope = new TransactionScope())
+            {
+                ConnectionFactory Connection = new ConnectionFactory();
+                SqlConnection conn = Connection.CreateConnection();
+                try
+                {
+                    conn.Open();
+                    if (data != null)
+                    {
+                        FUTDataService OO_FUTData = new FUTDataService(conn);
+                        OO_FUTData.Delete(data);
+                    }
+
+                    scope.Complete();
+                    message = "Successfully";
+                }
+                catch (Exception e)
+                {
+
+                    message = e.Message;
+                }
+                response = Request.CreateResponse<string>(HttpStatusCode.OK, message);
+                return response;
+            }
+
+        }
     }
 }
 

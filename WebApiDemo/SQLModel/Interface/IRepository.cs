@@ -15,5 +15,6 @@ namespace SQLModel.Interface
         string Get(JObject data);
 
         void Update(TEntity data);
+        void Delete(JObject data);
     }
 }
